@@ -1,0 +1,5 @@
+require 'spree_core'
+require 'spree_extension'
+require 'spree_omnibus/engine'
+require 'spree_omnibus/version'
+require 'spree_omnibus/configuration'
