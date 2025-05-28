@@ -12,6 +12,7 @@ AllCops:
   Exclude:
     - 'spec/dummy/**/*'
     - 'lib/generators/**/*'
+    - 'Rakefile'
 
 Layout/LineLength:
   Max: 150

@@ -8,11 +8,11 @@ end
 gem 'rails-controller-testing'
 
 spree_opts = { github: 'spree/spree', branch: '4-7-stable' }
+gem 'abbrev'
+gem 'mysql2' if ENV['DB'] == 'mysql' || ENV['CI']
+gem 'pg'
 gem 'redis', '>= 4.0.1'
 gem 'spree', spree_opts
 gem 'spree_backend', '4.7'
-
-gem 'mysql2' if ENV['DB'] == 'mysql' || ENV['CI']
-gem 'pg'
 
 gemspec
