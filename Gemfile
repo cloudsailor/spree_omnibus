@@ -7,15 +7,12 @@ end
 
 gem 'rails-controller-testing'
 
-spree_opts = { github: 'spree/spree', branch: 'main' }
+spree_opts = { github: 'spree/spree', branch: '4-7-stable' }
+gem 'redis', '>= 4.0.1'
 gem 'spree', spree_opts
-gem 'spree_emails', spree_opts
-gem 'spree_admin', spree_opts
-gem 'spree_storefront', spree_opts
+gem 'spree_backend', '4.7'
 
 gem 'mysql2' if ENV['DB'] == 'mysql' || ENV['CI']
-gem 'pg' if ENV['DB'] == 'postgres' || ENV['CI']
-
-gem 'sqlite3', '>= 2.0'
+gem 'pg'
 
 gemspec
