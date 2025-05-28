@@ -22,7 +22,7 @@ This is a Omnibus extension for [Spree Commerce](https://spreecommerce.org), an 
 
 ## Developing
 
-1. Create a dummy app
+1. Create a dummy app - make sure you have installed node ( npm install esbuild; npm init -y)
 
     ```bash
     bundle update
@@ -50,12 +50,4 @@ bundle exec gem bump -p -t
 bundle exec gem release
 ```
 
-For more options please see [gem-release README](https://github.com/svenfuchs/gem-release)
-
-## Contributing
-
-If you'd like to contribute, please take a look at the
-[instructions](CONTRIBUTING.md) for installing dependencies and crafting a good
-pull request.
-
-Copyright (c) 2025 [name of extension creator], released under the New BSD License
+Copyright (c) 2025 tomaszStrzeszewski23, released under the New BSD License
