@@ -3,4 +3,5 @@ Rails.application.config.to_prepare do
     prepend SpreeOmnibus::Spree::VariantSerializerDecorator
 
   Spree::Variant.prepend SpreeOmnibus::Spree::VariantDecorator
+  Spree::Admin::PricesController.prepend Spree::Admin::PricesControllerDecorator
 end

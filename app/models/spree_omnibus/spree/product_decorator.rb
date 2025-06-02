@@ -2,9 +2,7 @@ module SpreeOmnibus
   module Spree
     module ProductDecorator
       def self.prepended(base)
-        base.class_eval do
-          delegate :omnibus_price, :omnibus_price=, to: :find_or_build_master
-        end
+        base.delegate :omnibus_price, :omnibus_price=, to: :find_or_build_master
       end
     end
   end

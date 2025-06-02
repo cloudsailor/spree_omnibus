@@ -14,7 +14,7 @@ services:
   - elasticsearch
   - node
 before_install:
-  - psql -c 'create database yes_spree_test;' -U postgres
+  - psql -c 'create database spree_omnibus_test;' -U postgres
   - npm install esbuild
   - npm init -y
 cache:

@@ -1,22 +1,18 @@
 module SpreeOmnibus
   module Spree
     module VariantDecorator
-      def self.prepended(base)
-        base.class_eval do
-          def omnibus_price(currency = cost_currency)
-            price_in(currency).omnibus_price
-          end
+      def omnibus_price(currency = cost_currency)
+        price_in(currency).omnibus_price
+      end
 
-          def omnibus_price=(value)
-            amount = BigDecimal(value.to_s)
-            p = price_in(cost_currency)
-            if p.new_record?
-              p.omnibus_price = amount
-              p.save!
-            else
-              p.update!(omnibus_price: amount)
-            end
-          end
+      def omnibus_price=(value)
+        amount = BigDecimal(value.to_s)
+        p = price_in(cost_currency)
+        if p.new_record?
+          p.omnibus_price = amount
+          p.save!
+        else
+          p.update!(omnibus_price: amount)
         end
       end
     end
