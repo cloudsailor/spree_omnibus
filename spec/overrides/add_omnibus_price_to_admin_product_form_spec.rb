@@ -1,4 +1,3 @@
-# spec/features/admin/products_form_omnibus_price_override_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'spree/admin/products/_form omnibus_price override', type: :feature do
