@@ -22,3 +22,4 @@ public/spree
 *.gem
 */*.gem
 /node_modules
+.byebug_history
