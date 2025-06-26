@@ -18,4 +18,5 @@ module SpreeOmnibus
     end
   end
 end
+
 ::Spree::Variant.prepend SpreeOmnibus::Spree::VariantDecorator if ::Spree::Variant.included_modules.exclude?(SpreeOmnibus::Spree::VariantDecorator)

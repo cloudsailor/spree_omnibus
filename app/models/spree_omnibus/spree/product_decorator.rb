@@ -7,4 +7,5 @@ module SpreeOmnibus
     end
   end
 end
+
 ::Spree::Product.prepend SpreeOmnibus::Spree::ProductDecorator if ::Spree::Product.included_modules.exclude?(SpreeOmnibus::Spree::ProductDecorator)
