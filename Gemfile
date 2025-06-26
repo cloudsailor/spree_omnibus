@@ -5,17 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails-controller-testing'
-
-spree_opts = { github: 'spree/spree', branch: 'main' }
+spree_opts = '< 5.0.0'
+gem 'abbrev'
+gem 'byebug'
+gem 'deface'
+gem 'pg'
+gem 'redis', '>= 4.0.1'
 gem 'spree', spree_opts
-gem 'spree_emails', spree_opts
-gem 'spree_admin', spree_opts
-gem 'spree_storefront', spree_opts
-
-gem 'mysql2' if ENV['DB'] == 'mysql' || ENV['CI']
-gem 'pg' if ENV['DB'] == 'postgres' || ENV['CI']
-
+gem 'spree_backend', '< 5.0.0'
+gem 'spree_emails', '~> 4.10', '>= 4.10.1'
 gem 'sqlite3', '>= 2.0'
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'ffaker'
+  gem 'observer'
+end
 
 gemspec
