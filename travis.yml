@@ -1,0 +1,33 @@
+dist: focal
+language: ruby
+rvm:
+  - 3.4.1
+branches:
+  only:
+    - develop
+    - front
+    - staging
+    - master
+services:
+  - postgresql
+  - redis-server
+  - elasticsearch
+  - node
+before_install:
+  - psql -c 'create database spree_omnibus_test;' -U postgres
+  - npm install esbuild
+  - npm init -y
+cache:
+  bundler: true
+install:
+  - gem install bundler -v 2.4.13
+  - bundle install
+  - bundle exec rake test_app
+script:
+  - bundle exec rspec
+  - bundle exec rubocop
+  - bundle exec brakeman
+notifications:
+  webhooks:
+    - https://data.mongodb-api.com/app/campfire-webhooker-knmxc/endpoint/TravisWebhook/notify_campfire
+group: previous
