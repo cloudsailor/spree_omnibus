@@ -29,4 +29,5 @@ module Spree
   end
 end
 
+
 Spree::Admin::PricesController.prepend Spree::Admin::PricesControllerDecorator if ::Spree::Admin::PricesController.included_modules.exclude?(Spree::Admin::PricesControllerDecorator)

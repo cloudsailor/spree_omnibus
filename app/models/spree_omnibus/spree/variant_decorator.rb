@@ -6,7 +6,7 @@ module SpreeOmnibus
       end
 
       def omnibus_price=(value)
-        amount = BigDecimal(value.to_s)
+        amount = BigDecimal(value&.to_s&.empty? ? 0.0 : value&.to_s)
         p = price_in(cost_currency)
         if p.new_record?
           p.omnibus_price = amount
