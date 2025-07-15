@@ -3,8 +3,6 @@
 module Spree
   module Admin
     module PricesControllerDecorator
-      Spree::PermittedAttributes.object_attributes << :omnibus_price
-
       def create
         super
         persist_omnibus_prices if params[:vp].present?
@@ -18,11 +16,11 @@ module Spree
           next unless variant
 
           by_currency.each do |currency, attrs|
-            value = attrs[:omnibus_price].presence || attrs["omnibus_price"].presence
-            next unless value
+            value = attrs[:omnibus_price] || attrs["omnibus_price"]
+            next if value.blank?
 
             price = variant.prices.find_or_initialize_by(currency: currency)
-            price.omnibus_price = attrs[:omnibus_price]
+            price.omnibus_price = value
             price.save!
           end
         end
