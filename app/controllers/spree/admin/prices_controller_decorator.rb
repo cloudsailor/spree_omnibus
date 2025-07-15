@@ -3,6 +3,8 @@
 module Spree
   module Admin
     module PricesControllerDecorator
+      Spree::PermittedAttributes.object_attributes << :omnibus_price
+
       def create
         super
         persist_omnibus_prices if params[:vp].present?
