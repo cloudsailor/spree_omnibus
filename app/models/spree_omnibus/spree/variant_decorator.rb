@@ -6,7 +6,7 @@ module SpreeOmnibus
       end
 
       def omnibus_price=(value)
-        amount = BigDecimal(value&.to_s&.empty? ? 0.0 : value&.to_s)
+        amount = parse_amount(value)
         p = price_in(cost_currency)
         if p.new_record?
           p.omnibus_price = amount
@@ -14,6 +14,12 @@ module SpreeOmnibus
         else
           p.update!(omnibus_price: amount)
         end
+      end
+
+      private
+
+      def parse_amount(amount)
+        amount&.to_s&.sub(',', '').to_f
       end
     end
   end
