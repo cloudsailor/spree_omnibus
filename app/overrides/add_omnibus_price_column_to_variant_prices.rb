@@ -10,7 +10,9 @@ class AddOmnibusPriceColumnToVariantPrices < Spree::Base
             class: 'form-control' %>
     </td>
     <td class="text-center">
-      <%= "\#{variant.public_metadata['omnibus_percent']}%" if variant&.public_metadata['omnibus_percent'].present? %>
+      <% if variant&.public_metadata['omnibus_discount_percent'].present? %>
+        <%= "\#{variant.public_metadata['omnibus_discount_percent']}%" %>
+      <% end %>
     </td>
   HTML
   )
