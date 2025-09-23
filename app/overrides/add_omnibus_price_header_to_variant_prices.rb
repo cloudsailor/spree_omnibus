@@ -7,6 +7,7 @@ class AddOmnibusPriceHeaderToVariantPrices
     <th scope="col" class="text-center" style="min-width: 150px;">
       <%= I18n.t('omnibus_price') %>
     </th>
+    <th scope="col" class="text-center""><%= I18n.t(:omnibus_discount_percent) %></th>
   HTML
   )
 end
