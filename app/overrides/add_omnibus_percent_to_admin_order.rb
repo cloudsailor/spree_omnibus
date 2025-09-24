@@ -14,8 +14,9 @@ class AddOmnibusPercentToAdminOrder
     insert_after: "tr td:nth-child(4)",
     text: <<-HTML
       <td class="text-center">
-        <% if item.variant&.public_metadata['omnibus_discount_percent'].present? %>
-          <%= "\#{item.variant.public_metadata['omnibus_discount_percent']}%" %>
+        <% omnibus_percent = item.variant.prices.find_by(amount: item.price, currency: item.currency).preferred_omnibus_discount_percent %> 
+        <% if omnibus_percent.present? %>
+          <%= "\#{omnibus_percent}%" %>
         <% end %>
       </td>
   HTML
