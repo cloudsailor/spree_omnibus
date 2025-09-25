@@ -11,7 +11,7 @@ module SpreeOmnibus
       end
 
       def calculate_omnibus_discount_percent
-        return if [omnibus_price, amount].any?(&:blank?) || omnibus_price.to_f.zero?
+        return if [omnibus_price, amount, compare_at_amount].any?(&:blank?) || omnibus_price.to_f.zero? || compare_at_amount < amount
 
         self.preferred_omnibus_discount_percent = ((omnibus_price - amount) / omnibus_price.to_f * 100).floor
       end
