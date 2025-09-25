@@ -16,6 +16,10 @@ module SpreeOmnibus
         end
       end
 
+      def omnibus_discount_percent(currency = cost_currency)
+        price_in(currency).preferred_omnibus_discount_percent
+      end
+
       private
 
       def parse_amount(amount)

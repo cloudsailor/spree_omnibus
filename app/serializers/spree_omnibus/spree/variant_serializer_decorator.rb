@@ -5,6 +5,10 @@ module SpreeOmnibus
         base.attribute :omnibus_price do |variant, params|
           variant.omnibus_price(params[:currency])
         end
+
+        base.attribute :omnibus_discount_percent do |variant, params|
+          variant.omnibus_discount_percent(params[:currency])
+        end
       end
     end
   end
