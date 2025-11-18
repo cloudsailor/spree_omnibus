@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rspec-retry'
   s.add_development_dependency 'rubocop-rspec'
+  s.add_dependency "rails", "~> 7.1"
 end

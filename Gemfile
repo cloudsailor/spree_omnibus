@@ -14,7 +14,6 @@ gem 'deface'
 gem 'pg'
 gem 'redis', '>= 4.0.1'
 gem 'spree', spree_opts
-gem 'spree_backend', '< 5.0.0'
 gem 'spree_emails', '~> 4.10', '>= 4.10.1'
 gem 'sqlite3', '>= 2.0'
 
