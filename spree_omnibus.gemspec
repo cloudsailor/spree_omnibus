@@ -30,4 +30,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-retry'
   s.add_development_dependency 'rubocop-rspec'
   s.add_dependency "rails", "~> 7.1"
+  s.add_dependency 'spree_backend', '~> 4.8.0'
+  s.metadata['rubygems_mfa_required'] = 'true'
 end
